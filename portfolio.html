@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kamali | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .portfolio {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 42% 58%;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        /* LEFT SIDE */
+
+        .left-side {
+            background: #111827;
+            color: white;
+            padding: 45px;
+        }
+
+        .profile {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #374151;
+        }
+
+        .profile img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #818cf8;
+            padding: 5px;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+        .profile h1 {
+            font-size: 42px;
+            margin-bottom: 5px;
+        }
+
+        .profile p {
+            color: #a5b4fc;
+            font-size: 15px;
+        }
+
+        .section {
+            margin-top: 35px;
+        }
+
+        .section h2 {
+            color: #818cf8;
+            font-size: 20px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .objective {
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 3px solid #6366f1;
+        }
+
+        .education h3 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .education p {
+            color: #d1d5db;
+            font-size: 13px;
+        }
+
+        .education .year {
+            color: #a5b4fc;
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        /* SKILLS */
+
+        .skill-title {
+            color: #9ca3af;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .skills {
+            margin-bottom: 20px;
+        }
+
+        .skill {
+            display: inline-block;
+            padding: 7px 12px;
+            margin: 3px;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 20px;
+            color: #e5e7eb;
+            font-size: 12px;
+        }
+
+        /* RIGHT SIDE */
+
+        .right-side {
+            padding: 50px;
+            background: white;
+        }
+
+        .welcome {
+            color: #6366f1;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: #6366f1;
+        }
+
+        .hero p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 35px 0;
+        }
+
+        /* RIGHT SECTION */
+
+        .right-section h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        /* INTERNSHIP */
+
+        .internship {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .internship:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99,102,241,0.12);
+        }
+
+        .internship h3 {
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #6366f1 !important;
+            font-weight: bold;
+            font-size: 14px !important;
+            margin-bottom: 15px;
+        }
+
+        .internship p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .tags {
+            margin-top: 18px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 10px;
+            margin: 3px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 11px;
+            color: #475569;
+            background: white;
+        }
+
+        /* CERTIFICATES */
+
+        .certificate {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .certificate:hover {
+            border-color: #818cf8;
+            transform: translateX(5px);
+        }
+
+        .certificate-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #eef2ff;
+            color: #6366f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .certificate h3 {
+            font-size: 15px;
+        }
+
+        .certificate p {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            margin-top: 40px;
+            padding: 30px;
+            background: #111827;
+            color: white;
+            border-radius: 18px;
+        }
+
+        .contact h2 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            display: block;
+            color: #c7d2fe;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .contact-info a:hover {
+            color: #a5b4fc;
+            text-decoration: underline;
+        }
+
+        .contact button {
+            background: #818cf8;
+            border: none;
+            padding: 11px 22px;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .contact button:hover {
+            background: #6366f1;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .portfolio {
+                width: 95%;
+                grid-template-columns: 1fr;
+                margin: 20px auto;
+            }
+
+            .left-side,
+            .right-side {
+                padding: 35px 25px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .portfolio {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .profile h1 {
+                font-size: 35px;
+            }
+
+            .profile img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="portfolio">
+
+
+    <!-- LEFT SIDE -->
+
+    <div class="left-side">
+
+        <div class="profile">
+
+            <img src="kamali.jpg" alt="Kamali">
+
+            <h1>Kamali T C</h1>
+
+            <p>Data Analytics Enthusiast</p>
+
+        </div>
+
+
+        <!-- CAREER OBJECTIVE -->
+
+        <div class="section">
+
+            <h2>Career Objective</h2>
+
+            <p class="objective">
+
+                Motivated and detail-oriented student with a strong interest
+                in Data Analytics and data-driven problem solving. Seeking an
+                opportunity to apply my skills in data analysis, visualization,
+                and database management while learning new tools and
+                contributing to real-world projects.
+
+            </p>
+
+        </div>
+
+
+        <!-- EDUCATION -->
+
+        <div class="section">
+
+            <h2>Education</h2>
+
+            <div class="education">
+
+                <h3>Bachelor of Technology (B.Tech)</h3>
+
+                <p>
+                    Velalar College of Engineering and Technology,
+                    Tamil Nadu
+                </p>
+
+                <p class="year">2024 – 2028</p>
+
+                <p><b>CGPA:</b> 8.34</p>
+
+            </div>
+
+
+            <div class="education">
+
+                <h3>Higher Secondary Education (HSC)</h3>
+
+                <p>[School Name], Tamil Nadu</p>
+
+                <p class="year">2022 – 2024</p>
+
+                <p><b>Percentage:</b> 82%</p>
+
+            </div>
+
+
+            <div class="education">
+
+                <h3>Secondary School Education (SSLC)</h3>
+
+                <p>[School Name], Tamil Nadu</p>
+
+                <p class="year">2021 – 2022</p>
+
+                <p><b>Percentage:</b> 90%</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SKILLS -->
+
+        <div class="section">
+
+            <h2>Skills</h2>
+
+            <div class="skills">
+
+                <p class="skill-title">Programming</p>
+
+                <span class="skill">Java</span>
+
+            </div>
+
+            <div class="skills">
+
+                <p class="skill-title">Web Development</p>
+
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+
+            </div>
+
+            <div class="skills">
+
+                <p class="skill-title">Database</p>
+
+                <span class="skill">MySQL</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="right-side">
+
+
+        <!-- HERO -->
+
+        <div class="hero">
+
+            <p class="welcome">
+                WELCOME TO MY PORTFOLIO
+            </p>
+
+            <h2>
+                Turning Data into
+                <span>Meaningful Insights.</span>
+            </h2>
+
+            <p>
+                I am Kamali, a student interested in Data Analytics,
+                web technologies and data-driven problem solving.
+            </p>
+
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <!-- INTERNSHIP -->
+
+        <div class="right-section">
+
+            <h2>Internship</h2>
+
+            <div class="internship">
+
+                <h3>UI/UX Design Intern</h3>
+
+                <p class="company">CodeMax</p>
+
+                <p>
+
+                    Completed a UI/UX Design internship at CodeMax,
+                    where I learned Figma, UI/UX fundamentals,
+                    wireframing, user flows, typography, spacing,
+                    layouts, components, and Auto Layout.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Figma</span>
+                    <span class="tag">UI/UX</span>
+                    <span class="tag">Wireframing</span>
+                    <span class="tag">User Flow</span>
+                    <span class="tag">Typography</span>
+                    <span class="tag">Auto Layout</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <!-- CERTIFICATES -->
+
+        <div class="right-section">
+
+            <h2>Certificates</h2>
+
+            <div class="certificate">
+
+                <div class="certificate-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>Cloud Computing</h3>
+
+                    <p>NPTEL</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <div class="certificate-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>Agentic AI</h3>
+
+                    <p>Yellow Matrix</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="contact">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                Interested in collaboration, internships
+                or exciting opportunities?
+            </p>
+
+
+            <div class="contact-info">
+
+                <!-- Phone -->
+                <a href="tel:9345555627">
+                    📞 9345555627
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:kamali@gmail.com">
+                    ✉️ kamali@gmail.com
+                </a>
+
+            </div>
+
+
+            <button onclick="contactMessage()">
+                Contact Me
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    function contactMessage() {
+
+        window.location.href = "mailto:kamali@gmail.com";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
